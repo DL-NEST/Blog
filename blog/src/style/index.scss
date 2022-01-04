@@ -1,0 +1,36 @@
+// 输出模式
+@import "./mode/default"; //默认主题
+@import "./mode/night";  // 黑夜
+
+// 布局
+html,
+body{
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  // 布局
+  box-sizing:border-box;
+  position: fixed;
+  overflow: hidden;
+  font-size: 10px;
+}
+
+@media screen and (max-width: 1200px){
+  html,
+  body{
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 520px){
+  html,
+  body{
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 380px){
+  html,
+  body{
+    font-size: 7px;
+  }
+}
