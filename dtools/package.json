@@ -1,5 +1,5 @@
 {
-  "name": "dtool",
+  "name": "dtools",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,7 +14,7 @@
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps"
   },
-  "main": "src/electron/index.js",
+  "main": "background.js",
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^3.0.0",

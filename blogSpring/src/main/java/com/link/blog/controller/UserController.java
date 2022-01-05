@@ -2,8 +2,9 @@ package com.link.blog.controller;
 
 import cn.hutool.captcha.CaptchaUtil;
 import cn.hutool.captcha.LineCaptcha;
+import cn.hutool.core.util.IdUtil;
 import com.alibaba.fastjson.JSONObject;
-import com.link.blog.dao.UserMapper;
+import com.link.blog.mapper.UserMapper;
 import com.link.blog.entiy.User;
 import com.link.blog.enums.CodeReturn;
 import com.link.blog.exception.CodeExec;
@@ -42,8 +43,13 @@ public class UserController {
      * @date 2021/11/25 17:33
      */
     @GetMapping(path = "/All")
-    public List<User> All() {
-        return userMapper.findAll();
+    public String All() {
+        return userMapper.readFirstByUserName("root").getUserPassword();
+    }
+
+    @GetMapping(path = "/test")
+    public String test() {
+        return IdUtil.randomUUID();
     }
 
     @GetMapping(path = "/pre")
@@ -57,20 +63,10 @@ public class UserController {
         return redisUtil.setKey("haa","dwf",3,TimeUnit.MINUTES);
     }
 
-    /**
-     * @return string token
-     * @apiNote 获取token
-     * @author dl-nest
-     * @date 2021/11/25 17:32
-     */
-    @GetMapping(path = "/getToken")
-    public String getToken(){
-        return tokenUtil.getToken("audience","subject","tyr");
-    }
 
     /**
      * @return org.springframework.boot.configurationprocessor.json.JSONObject
-     * @apiNote 解析token
+     * @apiNote 登录的接口
      * @author dl-nest
      * @date 2021/11/25 17:34
      */
@@ -79,6 +75,26 @@ public class UserController {
     public JSONObject Login(@RequestBody JSONObject jsonParam, HttpServletResponse response){
         return userService.Login(jsonParam.getString("UserName"),jsonParam.getString("PassWord"));
     }
+
+    /**
+     * @param jsonParam-s
+     * @return com.alibaba.fastjson.JSONObject
+     * @apiNote 用户注册的接口
+     * @author dl-nest
+     * @date 2022/1/6 1:30
+     */
+    @ResponseBody
+    @PostMapping(path = "/signUp")
+    public JSONObject signUp(@RequestBody JSONObject jsonParam, HttpServletResponse response){
+        return userService.Login(jsonParam.getString("UserName"),jsonParam.getString("PassWord"));
+    }
+
+    /**
+     * @return com.alibaba.fastjson.JSONObject
+     * @apiNote 随机的验证码
+     * @author dl-nest
+     * @date 2022/1/6 1:27
+     */
     @PostMapping(path = "/cvv")
     public JSONObject cvv(){
         JSONObject re = new JSONObject();

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
  * @apiNote
  * @date 2021/11/25 20:55
  */
-public class DevFilter implements HandlerInterceptor {
+public class MessageFilter implements HandlerInterceptor {
     /**
      * @param request:
      * @param response:

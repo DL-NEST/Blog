@@ -17,7 +17,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
  */
 
 @Component
-@ControllerAdvice(basePackages = "com.link.linktree.controller")
+@ControllerAdvice(basePackages = "com.link.blog.controller")
 public class ResponseConfig implements ResponseBodyAdvice {
 
     @Override

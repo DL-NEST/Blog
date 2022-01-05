@@ -1,7 +1,7 @@
 package com.link.blog.config;
 
-import com.link.blog.filter.DevFilter;
-import com.link.blog.filter.RfFilter;
+import com.link.blog.filter.MessageFilter;
+import com.link.blog.filter.ArticleFilter;
 import com.link.blog.filter.UserFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -27,12 +27,12 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
         return new UserFilter();
     }
     @Bean
-    public DevFilter getDevFilter() {
-        return new DevFilter();
+    public MessageFilter getMessageFilter() {
+        return new MessageFilter();
     }
     @Bean
-    public RfFilter getRfFilter() {
-        return new RfFilter();
+    public ArticleFilter getArticleFilter() {
+        return new ArticleFilter();
     }
     /**
       * @apiNote 注册拦截器  asList（拦截列表）
@@ -46,11 +46,11 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
         //注册用户拦截器
         registry.addInterceptor(getUserFilter())
                 .addPathPatterns("/user/**")    //拦截
-                .excludePathPatterns("/user/login","/user/cvv");  //除去
-        //注册设备拦截器
-        registry.addInterceptor(getDevFilter()).addPathPatterns("/dev/**");
-        //注册RF拦截器
-        registry.addInterceptor(getRfFilter()).addPathPatterns("/Rf/**");
+                .excludePathPatterns("/user/login","/user/cvv","/user/signUp");  //除去
+        //注册留言拦截器
+        registry.addInterceptor(getMessageFilter()).addPathPatterns("/dev/**");
+        //注册文章数据拦截器
+        registry.addInterceptor(getArticleFilter()).addPathPatterns("/Rf/**");
     }
 
     @Bean

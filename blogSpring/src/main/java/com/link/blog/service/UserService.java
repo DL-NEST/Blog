@@ -1,7 +1,7 @@
 package com.link.blog.service;
 
 import com.alibaba.fastjson.JSONObject;
-import com.link.blog.dao.UserMapper;
+import com.link.blog.mapper.UserMapper;
 import com.link.blog.enums.CodeReturn;
 import com.link.blog.exception.CodeExec;
 import com.link.blog.util.TokenUtil;

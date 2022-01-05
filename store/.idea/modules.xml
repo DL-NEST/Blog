@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../dtool/.idea/dtool.iml" filepath="$PROJECT_DIR$/../dtool/.idea/dtool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../dtools/.idea/dtools.iml" filepath="$PROJECT_DIR$/../dtools/.idea/dtools.iml" />
     </modules>
   </component>
 </project>

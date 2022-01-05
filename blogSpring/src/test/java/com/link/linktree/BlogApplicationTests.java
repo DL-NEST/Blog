@@ -1,6 +1,6 @@
 package com.link.linktree;
 
-import com.link.blog.dao.UserMapper;
+import com.link.blog.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.StringRedisTemplate;

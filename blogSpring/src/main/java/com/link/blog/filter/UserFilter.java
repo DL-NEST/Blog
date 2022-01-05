@@ -4,7 +4,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.link.blog.dao.UserMapper;
+import com.link.blog.mapper.UserMapper;
 import com.link.blog.enums.CodeReturn;
 import com.link.blog.exception.CodeExec;
 import org.springframework.beans.factory.annotation.Value;
@@ -41,7 +41,7 @@ public class UserFilter implements HandlerInterceptor {
             System.out.println("token为空，请携带正确的token");
             return false;
         }
-        // 测试跳过拦截器的token的检查
+        // 测试环境跳过拦截器的token的检查
         if (token.equals("test")) {
             return  true;
         }
