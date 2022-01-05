@@ -1,5 +1,6 @@
 <template>
   <router-view/>
+  <div ref="modal"></div>
 </template>
 
 <script lang="ts">

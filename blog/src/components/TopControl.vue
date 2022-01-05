@@ -17,8 +17,15 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 428L339.92 303.9a160.48 160.48 0 0030.72-94.58C370.64 120.37 298.27 48 209.32 48S48 120.37 48 209.32s72.37 161.32 161.32 161.32a160.48 160.48 0 0094.58-30.72L428 464zM209.32 319.69a110.38 110.38 0 11110.37-110.37 110.5 110.5 0 01-110.37 110.37z"/></svg>
         </div>
       </div>
-      <div class="right-head">
-        <img src="../assets/head.jpg" alt="">
+      <div class="right-head" @click="fun" style="cursor: pointer; background-color: #bdbdbd;color: white;display: flex;justify-content: center;align-items: center;user-select: none">
+        <img src="../assets/head.jpg" alt="" v-show="false">
+        <a>登录</a>
+      </div>
+      <div class="fun-list" ref="fun">
+        <transition name="fun"
+                          enter-active-class="animate__animated animate__fadeIn">
+        <div v-show="funList" class="fun-btn" >注销</div>
+        </transition>
       </div>
     </div>
   </div>
@@ -27,14 +34,21 @@
 <script lang="ts">
 import {defineComponent, ref, watch} from 'vue';
 import {getNum, topList} from '@/router/router';
+import {userStore} from '@/store';
+import { storeToRefs } from 'pinia';
 
 export default defineComponent({
   name: 'TopControl',
   setup(){
+    const store = userStore()
     const selection = ref<number>(0)
+    const funList = ref<boolean>(false)
+    const { login } = storeToRefs(store)
     return{
       topList,
-      selection
+      selection,
+      funList,
+      login,
     }
   },
   methods:{
@@ -63,6 +77,13 @@ export default defineComponent({
     backUp(){
       //后退
       history.back();
+    },
+    fun(){
+      if (this.login === false){
+        alert('j')
+      }else {
+        this.funList = !this.funList
+      }
     }
   },
   mounted() {
@@ -131,6 +152,25 @@ export default defineComponent({
         }
       }
     }
+    .login-btn{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: "微软雅黑 Light";
+      button{
+        font-size: 1.6rem;
+        cursor: pointer;
+        color: #ffffff;
+        background-color: rgba(78, 78, 76,0.6);
+        border-radius: 2px;
+        border: none;
+      }
+      button:hover{
+        font-size: 1.6rem;
+        background-color: rgba(78, 78, 76,0.8);
+      }
+    }
   }
 }
 .nav{
@@ -155,7 +195,26 @@ export default defineComponent({
     transition: left 0.2s ease-in-out;
   }
 }
-@media screen and (max-width: 1200x){
+.fun-list{
+  user-select: none;
+  background-color: #c4c4c4;
+  position: absolute;
+  width: 8rem;
+  height: auto;
+  top: 5rem;
+  right: 0.4rem;
+  transition: height 0.2s ease-in-out;
+  .fun-btn{
+    box-sizing:border-box;
+    padding: 0.1rem 0.3rem;
+    cursor: pointer;
+    height: auto;
+    width: 100%;
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 1200px){
 
 }
 </style>

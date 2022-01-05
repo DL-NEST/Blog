@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
     <div class="blog-theme">
-      <div class="blog-head">
+      <div class="blog-head" style="  user-select: none;">
         <img src="../../../assets/head.jpg" alt="">
       </div>
       <h3 style="letter-spacing:0.2rem;">DL-Nest</h3>

@@ -4,9 +4,10 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.link.blog.dao.UserMapper;
+import com.link.blog.mapper.UserMapper;
 import com.link.blog.enums.CodeReturn;
 import com.link.blog.exception.CodeExec;
+import com.link.blog.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,6 +28,9 @@ public class UserFilter implements HandlerInterceptor {
 
     @Resource
     private UserMapper userMapper;
+
+    @Resource
+    private RedisUtil redisUtil;
     /**
      * @apiNote 拦截，判断为true的时候放行
      * @author dl-nest
@@ -41,28 +45,13 @@ public class UserFilter implements HandlerInterceptor {
             System.out.println("token为空，请携带正确的token");
             return false;
         }
-        // 测试跳过拦截器的token的检查
+        // 测试环境跳过拦截器的token的检查
         if (token.equals("test")) {
             return  true;
         }
-        // 获取jwt的值
-        try {
-            userId = JWT.decode(token).getAudience().get(0);
-            userUid = JWT.decode(token).getSubject();
-        } catch (JWTVerificationException e) {
-            //获取失败，值不匹配
-            throw new CodeExec(CodeReturn.USER_NOT_EXIST);
-        }
         //匹配userid的值(用户名),验证密钥是否正确
-        if (userMapper.existsByUserName(userId)){
-            JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(userMapper.findByUserName(userId).get(0).getUserPassword())).build();
-            try {
-                jwtVerifier.verify(token);
-                System.out.println("密匙正确");
-                return true;
-            } catch (JWTVerificationException e) {
-                throw new CodeExec(CodeReturn.USER_PASSWORD_ERROR);
-            }
+        if (redisUtil.getKeyBool(token)){
+            return true;
         }else{
             throw new CodeExec(CodeReturn.USER_NOT_EXIST);
         }

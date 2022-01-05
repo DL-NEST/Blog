@@ -28,6 +28,7 @@ public enum CodeReturn {
     USER_ACCOUNT_FORBIDDEN(2003,"账号已被禁用"),
     USER_NOT_EXIST(2004,"用户不存在"),
     USER_HAS_EXISTED(2005,"账号已存在"),
+    USER_NUM_LOG(2005,"账户登录已达上限"),
 
     /*config修改：3000-4000*/
     CONFIG_ERROR(3001,"修改失败");

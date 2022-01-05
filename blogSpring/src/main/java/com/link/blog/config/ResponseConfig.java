@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 /**
- * @apiNote 请求输出的装饰类
+ * @apiNote 请求接口输出的装饰类
  * @author dl-nest
  * @date 2021/12/2 16:59
  */
 
 @Component
-@ControllerAdvice(basePackages = "com.link.linktree.controller")
+@ControllerAdvice(basePackages = "com.link.blog.controller")
 public class ResponseConfig implements ResponseBodyAdvice {
 
     @Override
