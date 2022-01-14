@@ -2,6 +2,7 @@ package com.link.blog.controller;
 
 import cn.hutool.captcha.CaptchaUtil;
 import cn.hutool.captcha.LineCaptcha;
+import cn.hutool.core.util.IdUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.link.blog.mapper.UserMapper;
 import com.link.blog.entiy.User;
@@ -31,13 +32,34 @@ public class UserController {
     private RedisUtil redisUtil;
     @Resource
     private UserService userService;
+<<<<<<< HEAD
     
     @RequestMapping(method = RequestMethod.GET)
     public Object test() {
         return redisUtil.getKeyBool("ef");
+=======
+    @Resource
+    private TokenUtil tokenUtil;
+
+    /**
+     * @return List<User>
+     * @apiNote 获取所有用户
+     * @author dl-nest
+     * @date 2021/11/25 17:33
+     */
+    @GetMapping(path = "/All")
+    public String All() {
+        return userMapper.readFirstByUserName("root").getUserPassword();
+    }
+
+    @GetMapping(path = "/test")
+    public String test() {
+        return IdUtil.randomUUID();
+>>>>>>> 80541c0a4bcb54c349067ae1ed1f207e4af1f31e
     }
 
 
+<<<<<<< HEAD
     /**
      * @return org.springframework.boot.configurationprocessor.json.JSONObject
      * @apiNote 登录redis中的列表
@@ -48,6 +70,8 @@ public class UserController {
     public JSONObject[] userLoginList(HttpServletRequest request) {
         return redisUtil.getLoginList(redisUtil.getuid(request.getHeader("Token")));
     }
+=======
+>>>>>>> 80541c0a4bcb54c349067ae1ed1f207e4af1f31e
 
     /**
      * @return org.springframework.boot.configurationprocessor.json.JSONObject
@@ -71,7 +95,11 @@ public class UserController {
     @ResponseBody
     @PostMapping(path = "/signUp")
     public JSONObject signUp(@RequestBody JSONObject jsonParam, HttpServletResponse response){
+<<<<<<< HEAD
         return userService.Login(jsonParam);
+=======
+        return userService.Login(jsonParam.getString("UserName"),jsonParam.getString("PassWord"));
+>>>>>>> 80541c0a4bcb54c349067ae1ed1f207e4af1f31e
     }
 
     /**

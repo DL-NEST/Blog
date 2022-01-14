@@ -20,7 +20,7 @@ public interface UserMapper extends JpaRepository<User,Integer>, JpaSpecificatio
      */
     List<User> findByUserName(String username);
 
-    User readFirstByUserNameAndUserPassword(String UserName,String UserPassword);
+    List<User> findByUid(Integer uid);
 
     // 检测账户密码是否匹配
     boolean existsByUserNameAndUserPassword(String UserName,String UserPassword);
