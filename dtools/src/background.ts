@@ -5,6 +5,9 @@ import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer';
 const isDevelopment = process.env.NODE_ENV !== 'production';
 import {createWatch, signTray} from './electron';
 import {setIpc} from '@/electron/ipc';
+// 导入用户的配置文件
+import {winConfig} from './config';
+
 
 // 方案必须在应用程序准备好之前注册
 protocol.registerSchemesAsPrivileged([
@@ -17,8 +20,8 @@ let tray;
 async function createWindow() {
   // 创建窗口
   win = new BrowserWindow({
-    width: 800,
-    height: 55,
+    width: winConfig.w,
+    height: winConfig.h,
     x: 650,
     y: 300,
     icon: 'E:\\project\\Blog\\dtools\\public\\favicon.ico',
@@ -39,7 +42,7 @@ async function createWindow() {
   // 注册托盘
   app.whenReady().then(() => {
     app.setAppUserModelId(process.execPath);
-    tray = new Tray('E:\\project\\Blog\\dtools\\public\\favicon.ico');
+    tray = new Tray('G:\\project\\Blog\\dtools\\public\\favicon.ico');
     signTray(tray, win);
   });
   // 注册ipc
