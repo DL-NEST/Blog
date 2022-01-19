@@ -1,7 +1,7 @@
-import {BrowserWindow, ipcMain} from 'electron';
+import {BrowserView, BrowserWindow, ipcMain} from 'electron';
 import {winConfig} from '@/config';
 
-function plugIn(win: BrowserWindow, plug: boolean) {
+function plugIn(win: BrowserWindow, view: BrowserView, plug: boolean) {
   ipcMain.on('plug', (event, args) => {
     if (plug) {
       win.setContentSize(winConfig.w, 55, true);

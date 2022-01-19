@@ -14,6 +14,7 @@ function createWatch(win: BrowserWindow) {
       win.webContents.openDevTools({ mode: 'undocked' });
     });
     globalShortcut.register('Alt+space', () => {
+      sendNotification({title: '剪切板', message: 'nmn'});
       if (win.isVisible()) {
         win.hide();
       } else {
@@ -23,7 +24,7 @@ function createWatch(win: BrowserWindow) {
         // robot.keyToggle('control', 'up');
         // console.log(readString());
         win.show();
-        // sendNotification({title: '剪切板', message: });
+        // sendNotification({title: '剪切板', message: 'nmn'});
       }
     });
   });

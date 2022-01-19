@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
-import App from './App.vue';
-import router from './router';
+import search from './Search.vue';
 import './style/index.scss';
 
-createApp(App).use(router).mount('#app');
+// 把Search.vue挂载div
+createApp(search).mount('#search');
+

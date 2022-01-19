@@ -1,8 +1,8 @@
 import {plugIn} from './windows';
-import {BrowserWindow} from 'electron';
+import {BrowserView, BrowserWindow} from 'electron';
 
-function setIpc(win: BrowserWindow) {
-  plugIn(win, false);
+function setIpc(win: BrowserWindow, view: BrowserView) {
+  plugIn(win, view, false);
 }
 
 export {setIpc};

@@ -1,13 +1,14 @@
 'use strict';
-import {app, protocol, BrowserWindow, Tray, Menu, Notification, ipcMain, shell, BrowserView} from 'electron';
+import {app, protocol, BrowserWindow, Tray, Menu, Notification, ipcMain, shell, BrowserView, dialog } from 'electron';
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib';
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer';
 const isDevelopment = process.env.NODE_ENV !== 'production';
-import {createWatch, signTray} from './electron';
+import {createWatch, sendNotification, signTray} from './electron';
 import {setIpc} from '@/electron/ipc';
 // 导入用户的配置文件
 import {winConfig} from './config';
-
+import express from 'express';
+const plugApp = express();
 
 // 方案必须在应用程序准备好之前注册
 protocol.registerSchemesAsPrivileged([
@@ -17,12 +18,11 @@ protocol.registerSchemesAsPrivileged([
 let win: BrowserWindow;
 let tray;
 let view: BrowserView;
-
 async function createWindow() {
   // 创建窗口
   win = new BrowserWindow({
     width: winConfig.w,
-    height: winConfig.h,
+    height: 550,
     x: 650,
     y: 300,
     icon: 'E:\\project\\Blog\\dtools\\public\\favicon.ico',
@@ -38,10 +38,13 @@ async function createWindow() {
       enableRemoteModule: true, // 使用remote模块
     },
   });
-  // view的子窗口
+  // view插件展示块
   view = new BrowserView();
+  win.setBrowserView(view);
   view.setBounds({ x: 0, y: 55, width: winConfig.w, height: 495 });
-  view.webContents.loadURL('https://electronjs.org');
+  view.webContents.loadURL('https://www.baidu.com/').then();
+  win.setContentSize(winConfig.w, 55, true);
+  // 隐藏插件区域
   // 注册全局快捷键
   createWatch(win);
   // 注册托盘
@@ -51,7 +54,7 @@ async function createWindow() {
     signTray(tray, win);
   });
   // 注册ipc
-  setIpc(win);
+  setIpc(win, view);
   // 屏蔽系统上下文菜单
   win.hookWindowMessage(0x116, (e) => {
     win.setEnabled(false);
@@ -59,24 +62,20 @@ async function createWindow() {
       win.setEnabled(true);
     }, 20);
   });
-
   win.once('ready-to-show', () => {
-    win.show();
-    win.setBrowserView(view);
+    view.webContents.loadURL('https://www.qq.com/').then();
   });
-
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     await win.loadURL(process.env.WEBPACK_DEV_SERVER_URL as string);
-    // await win.loadFile('G:\\project\\Blog\\dtools\\src\\assets\\test\\index.html');
     if (!process.env.IS_TEST) {
-          // win.webContents.openDevTools(); // 是否在测试环境
-       }
+      // win.webContents.openDevTools(); // 是否在测试环境
+    }
   } else {
     // 注册的协议
     createProtocol('app');
     // 在未开发时加载index.html
-    await win.loadURL('app://./index.html');
+    await win.loadURL('app://./index.html/');
   }
 }
 
@@ -97,11 +96,11 @@ app.on('activate', () => {
 // 初始化并准备创建浏览器窗口。
 // 某些api只能在事件发生后使用。
 app.on('ready', async () => {
-    // try {
-    //   await installExtension(VUEJS3_DEVTOOLS);
-    // } catch (e) {
-    //   console.error('Vue Devtools failed to install:', e.toString());
-    // }
+  // try {
+  //   await installExtension(VUEJS3_DEVTOOLS);
+  // } catch (e) {
+  //   console.error('Vue Devtools failed to install:', e.toString());
+  // }
   // }
 
   await createWindow();
