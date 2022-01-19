@@ -3,11 +3,11 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    redirect: 'main',
+    redirect: 'app-main',
   },
   {
-    path: '/main',
-    name: 'main',
+    path: '/app-main',
+    name: 'app-main',
     component: () => import('../views/search/index.vue'),
   },
 ];

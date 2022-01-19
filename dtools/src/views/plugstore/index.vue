@@ -1,6 +1,8 @@
 <template>
   <div class="plugStore">
-    <div class="fun"></div>
+    <div class="fun">
+      sh
+    </div>
     <div class="fun-main"></div>
   </div>
 </template>
@@ -28,7 +30,7 @@ export default defineComponent({
     height: 48px;
   }
   .fun-main{
-    background-color: white;
+    background-color: #929292;
     width: 100%;
     flex-grow: 1;
   }

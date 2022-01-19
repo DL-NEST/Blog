@@ -1,5 +1,5 @@
 'use strict';
-import {app, protocol, BrowserWindow, Tray, Menu, Notification, ipcMain} from 'electron';
+import {app, protocol, BrowserWindow, Tray, Menu, Notification, ipcMain, shell, BrowserView} from 'electron';
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib';
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer';
 const isDevelopment = process.env.NODE_ENV !== 'production';
@@ -11,11 +11,12 @@ import {winConfig} from './config';
 
 // 方案必须在应用程序准备好之前注册
 protocol.registerSchemesAsPrivileged([
-  { scheme: 'app', privileges: { secure: true, standard: true } },
+  { scheme: 'app', privileges: { secure: true, standard: true , supportFetchAPI: true} },
 ]);
 // 主进程全局变量
 let win: BrowserWindow;
 let tray;
+let view: BrowserView;
 
 async function createWindow() {
   // 创建窗口
@@ -37,6 +38,10 @@ async function createWindow() {
       enableRemoteModule: true, // 使用remote模块
     },
   });
+  // view的子窗口
+  view = new BrowserView();
+  view.setBounds({ x: 0, y: 55, width: winConfig.w, height: 495 });
+  view.webContents.loadURL('https://electronjs.org');
   // 注册全局快捷键
   createWatch(win);
   // 注册托盘
@@ -55,13 +60,20 @@ async function createWindow() {
     }, 20);
   });
 
+  win.once('ready-to-show', () => {
+    win.show();
+    win.setBrowserView(view);
+  });
+
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     await win.loadURL(process.env.WEBPACK_DEV_SERVER_URL as string);
+    // await win.loadFile('G:\\project\\Blog\\dtools\\src\\assets\\test\\index.html');
     if (!process.env.IS_TEST) {
           // win.webContents.openDevTools(); // 是否在测试环境
        }
   } else {
+    // 注册的协议
     createProtocol('app');
     // 在未开发时加载index.html
     await win.loadURL('app://./index.html');
@@ -74,6 +86,8 @@ app.on('window-all-closed', () => {
     app.quit();
   }
 });
+
+
 
 app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) { createWindow(); }

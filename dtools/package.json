@@ -13,7 +13,8 @@
     "electron:debug": "vue-cli-service electron:serve --inspect=9292",
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps",
-    "electron-rebuild": "set DEBUG=electron-rebuild&&electron-rebuild"
+    "electron-rebuild": "set DEBUG=electron-rebuild&&electron-rebuild",
+    "yarn install": "yarn install"
   },
   "main": "background.js",
   "dependencies": {
@@ -23,7 +24,8 @@
     "robotjs": "^0.6.0",
     "vue": "^3.0.0",
     "vue-class-component": "^8.0.0-0",
-    "vue-router": "^4.0.0-0"
+    "vue-router": "^4.0.0-0",
+    "pinia": "^2.0.9"
   },
   "devDependencies": {
     "@types/electron-devtools-installer": "^2.2.0",
