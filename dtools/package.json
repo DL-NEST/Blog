@@ -16,7 +16,10 @@
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps",
     "electron-rebuild": "set DEBUG=electron-rebuild&&electron-rebuild",
-    "yarn install": "yarn install"
+    "yarn install": "yarn install",
+    "plug-dev": "vite --config ./plugins/vite.config.ts",
+    "plug-bulid": "vue-tsc --noEmit && vite build --config ./plugins/vite.config.ts",
+    "plug-preview": "vite preview --config ./plugins/vite.config.ts"
   },
   "main": "background.js",
   "dependencies": {
@@ -49,7 +52,10 @@
     "sass-loader": "^8.0.2",
     "typescript": "~4.1.5",
     "vue-cli-plugin-electron-builder": "^2.1.1",
-    "vue-jest": "^5.0.0-0"
+    "vue-jest": "^5.0.0-0",
+    "@vitejs/plugin-vue": "^2.0.0",
+    "vite": "^2.7.2",
+    "vue-tsc": "^0.29.8"
   },
 "gitHooks": {
     "pre-commit": "lint-staged"

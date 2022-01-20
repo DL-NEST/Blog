@@ -1,0 +1,1 @@
+import{_ as e}from"./assets/plugin-vue_export-helper.ddefbfc0.js";import{d as s,c as o,o as p,a as r}from"./assets/vendor.8565cc0e.js";const n=s({name:"plug"});function t(c,_,d,f,i,m){return p(),o("div",null," grehui ")}var a=e(n,[["render",t]]);r(a).mount("#app");

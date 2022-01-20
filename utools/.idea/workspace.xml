@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8195c8e6-91a2-499d-aa06-a41e7f3abf8d" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/../dtools/plugins/dist/assets/plugin-vue_export-helper.ddefbfc0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dtools/plugins/dist/assets/vendor.8565cc0e.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dtools/plugins/dist/plug-pulgstore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dtools/plugins/dist/plug-test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dtools/plugins/dist/pulgstore/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dtools/plugins/dist/test/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dtools/plugins/pulgstore/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dtools/plugins/pulgstore/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dtools/plugins/pulgstore/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dtools/plugins/test/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dtools/plugins/test/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dtools/plugins/test/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dtools/plugins/test/render/plug.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dtools/plugins/vite.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dtools/vite.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/utools.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/plugin-vue_export-helper.ddefbfc0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/vendor.8565cc0e.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plug-pulgstore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plug-test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/preload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pulgstore/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/.idea/vite-project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/.vscode/extensions.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/env.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/plugins/pulgstore/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/plugins/pulgstore/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/plugins/pulgstore/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/plugins/pulgstore/render/plug.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/plugins/test/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/plugins/test/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/plugins/test/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/plugins/test/render/plug.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/plugins/vite.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vite-project/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dtools/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../dtools/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dtools/pulgbuild/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dtools/src/background.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../dtools/src/background.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dtools/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dtools/src/plugins/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dtools/src/plugins/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dtools/src/plugins/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dtools/src/views/pluglist/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../dtools/plugins/pulgstore/render/plug.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dtools/src/views/plugstore/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dtools/src/views/search/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dtools/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../dtools/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="23waJGxKvS6d5l5ERfNWameWWO9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.16.1" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.18.9" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\project\Blog\utools" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\project\Blog\utools" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="8195c8e6-91a2-499d-aa06-a41e7f3abf8d" name="变更" comment="" />
+      <created>1642647530061</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1642647530061</updated>
+      <workItem from="1642647531439" duration="1410000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

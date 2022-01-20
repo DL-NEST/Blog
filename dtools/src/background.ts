@@ -42,7 +42,7 @@ async function createWindow() {
   view = new BrowserView();
   win.setBrowserView(view);
   view.setBounds({ x: 0, y: 55, width: winConfig.w, height: 495 });
-  view.webContents.loadURL('https://www.baidu.com/').then();
+  view.webContents.loadURL('http://localhost:3001/test/').then();
   win.setContentSize(winConfig.w, 55, true);
   // 隐藏插件区域
   // 注册全局快捷键
@@ -63,7 +63,7 @@ async function createWindow() {
     }, 20);
   });
   win.once('ready-to-show', () => {
-    view.webContents.loadURL('https://www.qq.com/').then();
+    // view.webContents.loadURL('https://www.qq.com/').then();
   });
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode

@@ -5,7 +5,7 @@ module.exports = {
         electronBuilder: {
             nodeIntegration: true,
             builderOptions: {
-                asar: true,
+                asar: false,
                 npmRebuild: false,
                 nsis: {
                     oneClick: false, // 一键安装

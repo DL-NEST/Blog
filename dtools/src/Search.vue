@@ -5,7 +5,6 @@
           class="search-main"
           placeholder="Hallo,World!"
           ref="search"
-          style="-webkit-app-region: drag;"
       />
       <div class="settings" @click="pull">
         <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200"><path d="M563.20625 545.3875l232.1875-142.7a51.25 51.25 0 0 0-53.6-87.2375L512.00625 456.6 282.61875 315.45a51.25 51.25 0 0 0-53.65 87.2375l231.8375 142.5875v273.925a51.25 51.25 0 1 0 102.4 0zM512.00625 0l443.3875 256v512L512.00625 1024 68.60625 768V256z m0 0" ></path></svg>
@@ -104,6 +103,7 @@ export default defineComponent({
   align-items: center;
   padding: 1rem;
   .search-main{
+    -webkit-app-region: no-drag;
     user-select: none;
     cursor: default;
     position: relative;
